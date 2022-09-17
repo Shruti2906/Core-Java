@@ -1,0 +1,22 @@
+
+
+class Base{
+	
+	public static void fun() {
+		System.out.println("static fun of base");
+	}
+}
+
+public class TestInheritance extends Base{
+
+	public static void main(String[] args) {
+
+		fun();
+		
+		Base b = new Base();
+		b.fun();
+
+	}
+	
+	
+}

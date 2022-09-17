@@ -1,0 +1,9 @@
+
+public class InvalidPercException {
+
+	float perc;
+	public InvalidPercException(float perc) {
+		
+		
+	}
+}

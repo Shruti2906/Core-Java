@@ -1,0 +1,8 @@
+
+public interface TestInterface {
+
+	int n1;
+	
+	void fun1();	//by default public abstract
+	
+}

@@ -1,0 +1,21 @@
+
+class ThreadDemo implements Runnable{
+
+	@Override
+	public void run() {
+		System.out.println("Thread is running now");
+	}
+	
+}
+
+public class RunnableInterfaceUsingLambda {
+
+	public static void main(String[] args) {
+
+		Thread thread = new Thread(new ThreadDemo());
+		
+		thread.start();
+
+	}
+
+}

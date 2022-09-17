@@ -1,0 +1,7 @@
+
+public class LowBalanceException extends Exception {
+
+	public String toString() {
+		return "";
+	}
+}

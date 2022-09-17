@@ -1,0 +1,8 @@
+
+public interface InterfaceWithDefualtMethod {
+
+	
+	default void fun() {
+		
+	}
+}

@@ -1,0 +1,22 @@
+
+public class UserTrail {
+
+	private int val1;
+	private int val2;
+	
+	public UserTrail() {
+
+		try {
+			
+		}
+		catch() {
+			
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

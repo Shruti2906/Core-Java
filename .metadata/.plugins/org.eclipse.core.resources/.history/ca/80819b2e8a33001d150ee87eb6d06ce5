@@ -1,0 +1,17 @@
+
+public class UserTrail {
+
+	private int val1;
+	private int val2;
+	
+	public UserTrail() {
+
+		
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,87 @@
+
+public class bankAccount {
+
+	private int accNo;
+	private String custName;
+	private String accType;
+	private float balance;
+	
+	public bankAccount() {
+		
+	}
+	public bankAccount(int accNo, String custName, String accType, float abalance) {
+		System.out.println("constructor");
+		this.accNo = accNo;
+		this.custName = custName;
+		this.accType = accType;
+		this.balance = balance;
+		
+		System.out.println("this.balance : "+this.balance);
+		System.out.println("balance : "+balance);
+	}
+	
+	public void deposit(float amount) {
+		boolean b = true;
+		try {
+			if(amount < 0) {
+				throw new NegativeAmountException();
+			}
+			b = false;
+		}
+		catch(NegativeAmountException e) {
+			System.out.println(e);
+		}
+		if(!b) {
+			balance = balance+amount;
+			
+		}
+	}
+	public void withdraw(float amount) {
+		try {
+			if(amount < 0) {
+				throw new NegativeAmountException();
+			}
+			
+		}
+		catch(NegativeAmountException e) {
+			System.out.println(e);
+		}
+		
+		if(accType.equalsIgnoreCase("Saving")) {
+			
+			try {
+				if((balance-amount) < 1000) {
+					throw new InsufficientFunds();
+				}
+			}
+			catch(InsufficientFunds e) {
+				System.out.println(e);
+			}
+			
+		}
+		else {
+			try {
+				if((balance-amount) < 5000) {
+					throw new InsufficientFunds();
+				}
+			}
+			catch(InsufficientFunds e) {
+				System.out.println(e);
+			}
+		}
+		
+	}
+	public float getBalance() {
+		
+		try {
+			if(accType.equals("Saving") &&  balance<1000) {
+				throw new LowBalanceException();
+			}
+			return this.balance;
+		}
+		catch(LowBalanceException e) {
+			System.out.println(e);
+		}
+		return this.balance;
+	}
+}

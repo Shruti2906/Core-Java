@@ -1,0 +1,30 @@
+
+public class CalcAverage {
+
+	public double avgFirst(int N) {
+		
+		int sum = 0;
+		double avg = -1;
+		try {
+			if(N <= 0 ) {
+				throw new IllegalArgumentException();
+			}
+			for(int i=1; i<=N; i++) {
+				sum += i;
+			}
+			avg = sum/N;
+			return avg;
+		}
+		catch(IllegalArgumentException e) {
+			System.out.println(e);
+		}
+		return avg;
+	}
+	
+	public static void main(String[] args) {
+		
+		int N;
+		
+		System.out.println("Average of first "+N+"natural numbers is : "+avgFirst(10));
+	}
+}

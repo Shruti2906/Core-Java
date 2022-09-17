@@ -1,0 +1,30 @@
+
+public class bankAccount {
+
+	private int accNo;
+	private String custName;
+	private String accType;
+	private float balance;
+	
+	public bankAccount() {
+		
+	}
+	public bankAccount(int accNo, String custName, String accType, float abalance) {
+		
+		this.accNo = accNo;
+		this.custName = custName;
+		this.accType = accType;
+		this.balance = balance;
+		
+	}
+	
+	public void deposit(float amount) {
+		
+	}
+	public void withdraw() {
+		
+	}
+	public float getBalance() {
+		return 0;
+	}
+}

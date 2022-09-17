@@ -1,0 +1,8 @@
+
+public class IllegalValueException extends Exception{
+
+	public String toString() {
+	
+		return "Illegal value for val1 or val2";
+	}
+}

@@ -1,0 +1,32 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+	
+		//Base class reference will call Base class show()
+		Base base = new Base();
+		base.show();
+		
+		//Derived class reference will call Derived class show()
+		Derived d = new Derived();
+		d.show();
+		
+		//1. Base class reference will call Derived class show() (it is called method overriding)
+		//as now it is refers to Derived class object
+		base = d;
+		base.show();
+		base.m2();
+		
+		//calling static method
+		Base b = new Derived();
+		b.fun();        //as per overriding rules..it should call derived fun	
+						//but as static methods canNOT be overridden it will base fun
+	}
+
+}
+
+//5. final methods cannot be overridden
+//6. Overriding and constructor : We can not override constructor as parent and child class can never 
+//have constructor with same name(Constructor name must always be same as Class name).
+//7. return type should be equal from java5 onward it could be equal or subtype
+//8. abstract method has to be overridden by concrete derived class

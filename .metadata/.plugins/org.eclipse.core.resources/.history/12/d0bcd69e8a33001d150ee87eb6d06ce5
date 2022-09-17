@@ -1,0 +1,35 @@
+
+public class UserTrail {
+
+	private int val1;
+	private int val2;
+	
+	public UserTrail() {
+
+		try {
+			if(val1)
+			
+		}
+		catch() {
+			
+		}
+	}
+	
+	public boolean show() {
+		
+		try {
+			if(val1<0 || val2<0) {
+				throw new Exception();
+			}
+			
+		}
+		catch() {
+			
+		}
+	}
+	public static void main(String[] args) {
+		
+
+	}
+
+}

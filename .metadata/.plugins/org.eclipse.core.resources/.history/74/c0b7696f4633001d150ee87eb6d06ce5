@@ -1,0 +1,8 @@
+
+public class IllegalArgumentException {
+
+	public String toString() {
+		
+		return "Exception : Argument should be natural number ..";
+	}
+}

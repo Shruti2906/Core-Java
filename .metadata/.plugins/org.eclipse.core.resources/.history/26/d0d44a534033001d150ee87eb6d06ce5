@@ -1,0 +1,8 @@
+
+public class TestUserDefinedException {
+
+	public static void main(String[] args) {
+
+	}
+
+}

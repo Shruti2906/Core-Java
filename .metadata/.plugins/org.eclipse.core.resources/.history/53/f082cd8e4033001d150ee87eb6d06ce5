@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class TestUserDefinedException {
+
+	public static void main(String[] args) {
+
+		int age;
+		
+		System.out.println("Enter Age : ");
+		
+	}
+
+}

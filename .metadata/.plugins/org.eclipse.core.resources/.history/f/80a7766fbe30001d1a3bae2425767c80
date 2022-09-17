@@ -1,0 +1,14 @@
+
+interface E{
+	
+	abstract void fun();
+	
+}
+
+public abstract class AbstractClass_N_Interface implements E{
+
+	public void fun() {
+		System.out.println("in abstarct class");
+	}
+	
+}

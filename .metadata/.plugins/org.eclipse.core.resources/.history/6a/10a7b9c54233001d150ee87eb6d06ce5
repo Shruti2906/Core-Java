@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class TestUserDefinedException {
+
+	public static void display() throws{
+		
+		Scanner sc = new Scanner(System.in);
+		int age;
+		System.out.println("Enter Age : ");
+		age = sc.nextInt();
+		
+		try {
+			if(age < 18) {
+				throw new InvalidAgeException();
+			}
+		}
+		catch(InvalidAgeException e) {
+			System.out.println("Exception is : "+e);
+			throw InvalidAgeException;
+			//System.out.println(e.getMessage());
+		}
+		System.out.println("thank you");
+		
+	}
+	
+	public static void main(String[] args) {
+
+		try {
+			display();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}

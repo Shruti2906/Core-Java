@@ -1,0 +1,26 @@
+
+public class ExceptionEx {
+
+	public static void main(String[] args) {
+	
+		int n1 = Interger.parseInt(args[0]);
+		int n2 = 0; 
+		float result;
+		
+		try {
+			result = n1/n2;
+			
+			System.out.println("Division is : "+result);
+		}
+		catch(ArithmeticException e) {
+			
+			System.out.println(e);
+		}
+		catch() {
+			
+		}
+		System.out.println("Thank You !!");
+		
+	}
+
+}

@@ -1,0 +1,18 @@
+
+public class Test implements TestInterface{
+
+	public static void main(String[] args) {
+
+		Test t = new Test();
+		t.fun1();
+		
+
+	}
+
+	@Override
+	public void fun1() {
+		System.out.println("implemented fun in Test");
+		
+	}
+
+}

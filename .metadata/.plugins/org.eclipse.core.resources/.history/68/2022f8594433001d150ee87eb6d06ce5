@@ -1,0 +1,10 @@
+
+public class InvalidPercException extends Exception {
+
+	float perc;
+	public InvalidPercException(float perc) {
+		this.perc = perc;
+		//System.out.println("Your Percentage is : "+perc);
+		
+	}
+}

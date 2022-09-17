@@ -1,0 +1,34 @@
+
+import java.util.Scanner;
+
+public class TestEmp {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Employee Id : ");
+		int empId = sc.nextInt();
+		
+		System.out.println("Enter Employee Name : ");
+		String empName = sc.next();
+		
+		System.out.println("Enter Employee Designation [1/2/3] : ");
+		System.out.println("1 : Manager\t2 : Officer\t3 : CLERK");
+		int empDes = sc.nextInt();
+		
+		System.out.println("Enter Employee Basic Salary : ");
+		double basic = sc.nextDouble();
+		
+		try {
+			if(basic < 500) {
+				throw new LowSalaryException();
+			}
+		}
+		catch(LowSalaryException e) {
+			System.out.println(e);
+		}
+		
+		
+	}
+
+}

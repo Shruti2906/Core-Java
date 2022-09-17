@@ -1,0 +1,21 @@
+
+public class CalcAverage {
+
+	public double avgFirst(int N) {
+		
+		int sum = 0;
+		double avg;
+		try {
+			if(N <= 0 ) {
+				throw new IllegalArgumentException();
+			}
+			for(int i=1; i<=N; i++) {
+				sum += i;
+			}
+			avg = sum/N;
+		}
+		catch(IllegalArgumentException e) {
+			System.out.println(e);
+		}
+	}
+}

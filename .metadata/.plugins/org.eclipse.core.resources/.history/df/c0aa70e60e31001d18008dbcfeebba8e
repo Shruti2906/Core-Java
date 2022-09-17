@@ -1,0 +1,17 @@
+
+@FunctionalInterface
+interface DemoInterface{
+	
+	void say();
+	
+}
+
+public class TestInterface {
+
+	public static void main(String[] args) {
+	
+		
+
+	}
+
+}

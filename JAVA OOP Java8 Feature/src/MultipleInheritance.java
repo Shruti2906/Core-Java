@@ -1,0 +1,45 @@
+interface InterfaceOne{
+	
+	default void fun() {
+		System.out.println(" Interface one default fun() ");
+	}
+	default void fun1() {
+		System.out.println(" Interface one default fun()1 ");
+	}
+}
+
+interface InterfaceTwo{
+	
+	default void fun() {
+		System.out.println(" Interface Two default fun() ");
+	}
+}
+
+public class MultipleInheritance implements InterfaceOne, InterfaceTwo{
+
+	public static void main(String[] args) {
+
+		System.out.println("Java doen not support multiple inheritance ");
+		System.out.println("It can be achieved through Interface");
+		System.out.println("default method was introduced after java 8 to support backward compatibility");
+		System.out.println("thi is demonstration of how java handle amiguity problem caused by default method");
+		
+		MultipleInheritance m = new MultipleInheritance();
+		m.fun();
+		
+	}
+
+	@Override
+	public void fun() {
+		
+		fun1();
+		
+		//to call InterfaceOne fun()  ..not compulsory to call 
+		InterfaceOne.super.fun();
+		
+		//to call InterfaceTwo fun()
+		InterfaceTwo.super.fun();
+		System.out.println("implementing class fun method");
+	}
+
+}

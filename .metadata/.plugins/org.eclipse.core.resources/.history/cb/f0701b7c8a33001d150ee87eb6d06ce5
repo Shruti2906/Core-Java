@@ -1,0 +1,7 @@
+
+public class IllegalValueException extends Exception{
+
+	public String toString() {
+		
+	}
+}

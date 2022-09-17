@@ -1,0 +1,5 @@
+import com.sun.tools.jdi.JDWP.Event.Composite.Events.Exception;
+
+public class LowBalanceException extends Exception {
+
+}

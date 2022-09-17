@@ -1,0 +1,24 @@
+interface InterfaceOne{
+	
+	default void fun() {
+		System.out.println(" Interface one default fun() ");
+	}
+}
+
+interface InterfaceTwo{
+	
+	default void fun() {
+		System.out.println(" Interface one default fun() ");
+	}
+}
+
+public class MultipleInheritance {
+
+	public static void main(String[] args) {
+
+		System.out.println("Java doen not support multiple inheritance ");
+		System.out.println("It can be achieved through Interface");
+
+	}
+
+}

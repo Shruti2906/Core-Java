@@ -1,0 +1,14 @@
+
+
+class Base{
+	
+}
+
+public class TestInheritance extends Base{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

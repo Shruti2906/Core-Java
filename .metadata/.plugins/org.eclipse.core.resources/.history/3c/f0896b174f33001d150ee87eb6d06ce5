@@ -1,0 +1,7 @@
+
+public class NegativeAmountException extends Exception{
+
+	public String toString() {
+		
+	}
+}

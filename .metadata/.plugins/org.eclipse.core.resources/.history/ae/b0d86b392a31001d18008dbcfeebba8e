@@ -1,0 +1,13 @@
+
+class ThreadDemo implements Runnable{
+	
+}
+
+public class RunnableInterfaceUsingLambda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

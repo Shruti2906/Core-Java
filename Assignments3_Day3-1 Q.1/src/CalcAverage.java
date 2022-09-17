@@ -1,0 +1,35 @@
+
+import java.util.Scanner;
+
+public class CalcAverage {
+
+	public static double avgFirst(int N) {
+		
+		int sum = 0;
+		double avg = -1;
+		try {
+			if(N <= 0 ) {
+				throw new IllegalArgumentException();
+			}
+			for(int i=1; i<=N; i++) {
+				sum += i;
+			}
+			avg = sum/(float)N;
+			
+			return avg;
+		}
+		catch(IllegalArgumentException e) {
+			System.out.println(e);
+		}
+		return avg;
+	}
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in); 
+		int N;
+		System.out.println("Enter any Natural number : ");
+		N = sc.nextInt();
+		System.out.println("Average of first "+N+" natural numbers is : "+avgFirst(N));
+	}
+}

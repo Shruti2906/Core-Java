@@ -1,0 +1,17 @@
+
+public class bankAccount {
+
+	private int accNo;
+	private String custName;
+	private String accType;
+	private float balance;
+	
+	public bankAccount() {
+		
+	}
+	public bankAccount(int accNo, String custName, String accType, float abalance) {
+		
+		
+		
+	}
+}

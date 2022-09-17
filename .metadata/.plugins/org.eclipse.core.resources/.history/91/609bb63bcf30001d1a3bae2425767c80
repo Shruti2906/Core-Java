@@ -1,0 +1,12 @@
+
+public class TestDefaultMethodInterface implements InterfaceWithDefualtMethod{
+
+	public static void main(String[] args) {
+
+		fun();
+
+	}
+	
+	
+
+}

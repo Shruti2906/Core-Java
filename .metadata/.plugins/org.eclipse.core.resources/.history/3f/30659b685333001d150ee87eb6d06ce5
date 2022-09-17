@@ -1,0 +1,61 @@
+
+public class bankAccount {
+
+	private int accNo;
+	private String custName;
+	private String accType;
+	private float balance;
+	
+	public bankAccount() {
+		
+	}
+	public bankAccount(int accNo, String custName, String accType, float abalance) {
+		
+		this.accNo = accNo;
+		this.custName = custName;
+		this.accType = accType;
+		this.balance = balance;
+		
+	}
+	
+	public void deposit(float amount) {
+		boolean b = true;
+		try {
+			if(amount < 0) {
+				throw new NegativeAmountException();
+			}
+			b = false;
+		}
+		catch(NegativeAmountException e) {
+			System.out.println(e);
+		}
+		if(!b) {
+			balance = balance+amount;
+			
+		}
+	}
+	public void withdraw(float amount) {
+		try {
+			if(amount < 0) {
+				throw new NegativeAmountException();
+			}
+			
+		}
+		catch(NegativeAmountException e) {
+			System.out.println(e);
+		}
+		
+		if(accType.equalsIgnoreCase("Saving")) {
+			
+			if()
+			
+		}
+		else {
+			
+		}
+		
+	}
+	public float getBalance() {
+		return 0;
+	}
+}

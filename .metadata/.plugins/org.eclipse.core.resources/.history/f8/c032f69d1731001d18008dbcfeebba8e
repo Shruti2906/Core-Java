@@ -1,0 +1,20 @@
+
+interface Shape{
+	
+}
+
+class Circle implements Shape{
+	
+}
+class Rectangle implements Shape{
+	
+}
+
+public class TestLambdaExp2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

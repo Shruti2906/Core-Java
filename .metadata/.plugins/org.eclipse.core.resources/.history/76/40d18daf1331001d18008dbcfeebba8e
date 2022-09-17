@@ -1,0 +1,19 @@
+//functional interface is a interface which has only one abstract method 
+//though it could have any number of default and static methods
+
+@FunctionalInterface
+interface DemoInterface{
+	
+	void say();
+	
+}
+
+public class TestInterface {
+
+	public static void main(String[] args) {
+	
+		
+
+	}
+
+}

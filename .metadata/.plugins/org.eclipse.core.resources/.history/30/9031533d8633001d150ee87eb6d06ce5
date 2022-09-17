@@ -1,0 +1,28 @@
+
+public class Emp {
+
+	private int empId;
+	private String empName;
+	private String empDesignation;
+	private double empBasic;
+	private double empHra;
+	
+	public void printDET(){
+		
+		System.out.println("Employee Id : "+empId);
+		System.out.println("Employee Name : "+empName);
+		System.out.println("Employee Designation : "+empDesignation);
+		System.out.println("Employee Basic Salary : "+empBasic);
+		System.out.println("Employee HRA : "+empHra);
+	}
+	public void calculateHRA(){
+		
+		if(empDesignation.equalsIgnoreCase("Manager")) {
+			empHra = (empBasic*10)/100;
+		}
+		if(empDesignation.equalsIgnoreCase("Officer")) {
+			empHra = (empBasic*12)/100;
+		}
+		if(empDesignation.equalsIgnoreCase("Clerk"));
+	}
+}

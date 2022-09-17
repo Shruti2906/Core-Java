@@ -1,0 +1,31 @@
+
+interface Shape{
+	
+	void draw();
+}
+
+class Circle implements Shape{
+
+	@Override
+	public void draw() {
+		
+	}
+	
+}
+
+class Rectangle implements Shape{
+
+	@Override
+	public void draw() {
+		
+	}
+	
+}
+
+public class TestLambdaExp2 {
+
+	public static void main(String[] args) {
+	
+	}
+
+}

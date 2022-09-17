@@ -1,0 +1,18 @@
+
+public class ExceptionEx {
+
+	public static void main(String[] args) {
+	
+		int n1 = 20;
+		int n2 = 10; 
+		float result;
+		
+		result = n1/n2;
+		
+		System.out.println("Division is : "+result);
+		
+		System.out.println("Thank You !!");
+		
+	}
+
+}

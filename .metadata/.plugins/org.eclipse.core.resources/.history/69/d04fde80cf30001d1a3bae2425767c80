@@ -1,0 +1,18 @@
+
+public class TestDefaultMethodInterface implements InterfaceWithDefualtMethod{
+
+	public static void main(String[] args) {
+
+		
+		TestDefaultMethodInterface test = new TestDefaultMethodInterface();
+		test.fun();
+
+	}
+	
+	@Override
+	public void fun() {	//overriding interface's fun()
+		System.out.println("fun of implementing class");
+	}
+	
+
+}

@@ -1,0 +1,16 @@
+
+public class Emp {
+
+	private int empId;
+	private String empName;
+	private String empDesignation;
+	private double basic;
+	private double hra;
+	
+	public void printDET(){
+		
+	}
+	calculateHRA(){
+		
+	}
+}

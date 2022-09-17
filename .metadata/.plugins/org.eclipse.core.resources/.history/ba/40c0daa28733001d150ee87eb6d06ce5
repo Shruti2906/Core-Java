@@ -1,0 +1,7 @@
+
+public class LowSalaryException extends Exception{
+
+	public String toString() {
+		return "";
+	}
+}

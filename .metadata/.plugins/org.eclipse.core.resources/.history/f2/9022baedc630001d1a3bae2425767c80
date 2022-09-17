@@ -1,0 +1,15 @@
+
+public class Test implements TestInterface{
+
+	public static void main(String[] args) {
+
+
+	}
+
+	@Override
+	public void fun1() {
+		System.out.println("implemented fun in Test");
+		
+	}
+
+}

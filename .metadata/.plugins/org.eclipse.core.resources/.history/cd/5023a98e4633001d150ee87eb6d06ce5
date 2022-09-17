@@ -1,0 +1,15 @@
+
+public class CalcAverage {
+
+	public double avgFirst(int N) {
+		
+		try {
+			if(N <= 0 ) {
+				throw new IllegalArgumentException();
+			}
+		}
+		catch() {
+			
+		}
+	}
+}

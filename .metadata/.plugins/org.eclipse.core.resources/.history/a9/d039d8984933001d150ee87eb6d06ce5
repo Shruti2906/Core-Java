@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Number {
+
+	private int a;
+	private int b;
+	private double result;
+	
+	public Number(int x ,int y) {
+		a = x;
+		b = y;
+	}
+	public void check() {
+		try {
+			if (b == 0) {
+				throw new ArithmeticException();
+			}
+		}
+		catch(ArithmeticException e) {
+			System.out.println("Exception : "+e);
+		}
+	}
+	public void add() {
+		result = a+b;
+	}
+	public void sub() {
+		result = a-b;
+	}
+	public void mul() {
+		result = a*b;
+	}
+	public void div() {
+		result = a/b;
+	}
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+	}
+}

@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class TestRectangle {
+
+	public static void main(String[] args) {
+			
+		Scanner sc = new Scanner(System.in);
+			
+		Rectangle rec[] = new Rectangle[5];
+		
+		RectangleOperations rOperation = new RectangleOperations();
+
+		for(int i=0; i<5; i++) {
+			
+			Rectangle r = new Rectangle();
+			System.out.println("Enter Rectangle Length : ");
+			r.setLength(sc.nextFloat());
+			System.out.println("Enter rectangle Breadth : ");
+			r.setBreadth(sc.nextFloat());
+			
+			rOperation.calculateArea();
+		
+			
+		}
+		
+		
+	}
+
+}

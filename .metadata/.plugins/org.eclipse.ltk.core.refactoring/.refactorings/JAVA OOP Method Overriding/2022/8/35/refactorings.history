@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Parent&apos; to &apos;Derived&apos;&#x0D;&#x0A;- Original project: &apos;JAVA OOP Method Overriding&apos;&#x0D;&#x0A;- Original element: &apos;Parent&apos;&#x0D;&#x0A;- Renamed element: &apos;Derived&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Parent&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Parent.java[Parent" matchStrategy="1" name="Derived" qualified="false" references="true" similarDeclarations="false" stamp="1661602016642" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,25 @@
+//We need this class and declare object just to call the method of interface 
+//this extra code is known as boiler plate
+//to avoid this boiler plate code ..lambda expression was introduced in java 8
+//which is use for functional interface
+
+class ThreadDemo implements Runnable{
+
+	@Override
+	public void run() {
+		System.out.println("Thread is running now");
+	}
+	
+}
+
+public class RunnableInterfaceUsingLambda {
+
+	public static void main(String[] args) {
+
+		Thread thread = new Thread(new ThreadDemo());
+		thread.start();
+
+		Thread thread1 = new Thread()
+	}
+
+}
