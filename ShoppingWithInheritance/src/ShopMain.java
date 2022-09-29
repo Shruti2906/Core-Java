@@ -17,8 +17,9 @@ public class ShopMain {
 		int ch;
 		do {
 			
-			System.out.println("1 : Add Customer\n2 : Display Customer Details\n3 : Add Product\n4 : View Bill");
-			System.out.println("Enter Your choice : ");
+			System.out.println("\n\n************************************** LinkCode Shopping Bazar *****************************************");
+			System.out.println("\n\n\t\t\t1 : Add Customer\n\t\t\t2 : Display Customer Details\n\t\t\t3 : Add Product\n\t\t\t4 : View Bill");
+			System.out.println("\t\t\tEnter Your choice : ");
 			ch = sc.nextInt();
 			
 			switch(ch) {
@@ -31,10 +32,16 @@ public class ShopMain {
 					break;
 					
 				case 3:
-					sInfo.addProduct(custArr);
-					System.out.println("\n-------------------------------------------------------");
-					System.out.println("Product added successfully.!");
-					System.out.println("\n-------------------------------------------------------\n");
+					if(sInfo.addProduct(custArr)) {
+						System.out.println("\n-------------------------------------------------------");
+						System.out.println("Product added successfully.!");
+						System.out.println("\n-------------------------------------------------------\n");
+					}
+					else {
+						System.out.println("\n-------------------------------------------------------");
+						System.out.println("Cannot Proceed Futhur.!");
+						System.out.println("\n-------------------------------------------------------");
+					}
 					break;
 					
 				case 4:
@@ -42,11 +49,13 @@ public class ShopMain {
 					int custId = sc.nextInt();
 					Customer cust = sInfo.searchAccount(custArr, custId);
 					bill = sInfo.calculateBill(custArr, custId);
-					if(bill != null) {
+					if(cust!= null && bill != null) {
 						sInfo.displayBill(cust, bill);
 					}
 					else {
-						System.out.println("\nCustomer does NOT Exist.!");
+						System.out.println("\n-------------------------------------------------------");
+						System.out.println("Customer does NOT Exist Or May NOT Have Bill.!");
+						System.out.println("\n-------------------------------------------------------");
 					}
 					
 					break;
@@ -57,7 +66,9 @@ public class ShopMain {
 			str = sc.next();
 		}while((str.equalsIgnoreCase("y")) || (str.equalsIgnoreCase("yes")));
 		
+		System.out.println("\n-------------------------------------------------------");
 		System.out.println("Thank You .!");	
+		System.out.println("\n-------------------------------------------------------");
 	}
 	
 	

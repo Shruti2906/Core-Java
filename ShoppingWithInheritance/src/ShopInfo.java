@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ShopInfo {
 
-	private static int custLimit = 100;
+	private final static int custLimit = 100;
 	private int purhcaseLimit = 100;
 	private int customerCount = 0;
 	
@@ -18,20 +18,20 @@ public class ShopInfo {
 	
 	public void addCustomer(Customer custArr[]) throws ParseException {
 		
-		System.out.println("Enter Customer Id : ");
+		System.out.println("\tEnter Customer Id : ");
 		int cId = sc.nextInt();
-		System.out.println("Enter Customer Name : ");
+		System.out.println("\tEnter Customer Name : ");
 		String cname = sc.next();
-		System.out.println("Enter Date Of Birth : ");
+		System.out.println("\tEnter Date Of Birth : ");
 		String sDate = sc.next();
 		Date date = new SimpleDateFormat("DD/MM/YYYY").parse(sDate);
 		
-		System.out.println("--- Address Details : ");
-		System.out.println("Enter City : ");
+		System.out.println("\t--- Address Details : ");
+		System.out.println("\tEnter City : ");
 		String city = sc.next();
-		System.out.println("Enter State : ");
+		System.out.println("\tEnter State : ");
 		String st = sc.next();
-		System.out.println("Enter pinCode : ");
+		System.out.println("\tEnter pinCode : ");
 		String pincode = sc.next();
 		Address addr = new Address(city, st, pincode); 
 		
@@ -39,41 +39,41 @@ public class ShopInfo {
 		int cnt = 0;
 		
 		String ch;
-		System.out.println("\nEnter Customer's Product Purchase .....\n");
+		System.out.println("\n\tEnter Customer's Product Purchase .....\n");
 		do {
 			Product prod = null;
-			System.out.println("Enter Product Id : ");
+			System.out.println("\tEnter Product Id : ");
 			int id =  sc.nextInt();
-			System.out.println("Enter Product Name ");
-			System.out.println("1] Book\n2] Laptop : ");
+			System.out.println("\tEnter Product Name ");
+			System.out.println("\t1] Book\n\t2] Laptop : ");
 			int name = sc.nextInt();
 			if(name == 1) {
-				System.out.println("Enter Product Price : ");
+				System.out.println("\tEnter Product Price : ");
 				double price = sc.nextDouble();
-				System.out.println("Enter Product Quantity : ");
+				System.out.println("\tEnter Product Quantity : ");
 				int qty = sc.nextInt();
-				System.out.println("Enter Book Author : ");
+				System.out.println("\tEnter Book Author : ");
 				String author = sc.next();
-				System.out.println("Enter Book Genere : ");
+				System.out.println("\tEnter Book Genere : ");
 				String genere = sc.next();
-				System.out.println("Enter Book Publication : ");
+				System.out.println("\tEnter Book Publication : ");
 				String publication = sc.next();
 				pArr[cnt++] = new Book(id, "Book", price, qty, author, genere, publication);
 				
 			}
 			else if(name == 2) {
-				System.out.println("Enter Product Price : ");
+				System.out.println("\tEnter Product Price : ");
 				double price = sc.nextDouble();
-				System.out.println("Enter Product Quantity : ");
+				System.out.println("\tEnter Product Quantity : ");
 				int qty = sc.nextInt();
-				System.out.println("Enter Hard Disk Capacity : ");
+				System.out.println("\tEnter Hard Disk Capacity : ");
 				float hdd = sc.nextFloat();
-				System.out.println("Enter Operating system Installed : ");
+				System.out.println("\tEnter Operating system Installed : ");
 				String os = sc.next();
-				System.out.println("Enter CPU ");
-				System.out.println("1] Intel\t2]AMD\t:\t");
+				System.out.println("\tEnter CPU ");
+				System.out.println("\t1] Intel\t2]AMD\t:\t");
 				int ccpu = sc.nextInt();
-				System.out.println("Enter Laptop RAM : ");
+				System.out.println("\tEnter Laptop RAM : ");
 				int ram = sc.nextInt();
 				if(ccpu == 1) {
 					pArr[cnt++] = new Laptop(id, "Laptop", price, qty, hdd, os, "Intel", ram);
@@ -83,7 +83,7 @@ public class ShopInfo {
 				}
 			}
 			
-			System.out.println("Continue Purchase(Y/N) : ");
+			System.out.println("\tContinue Purchase(Y/N) : ");
 			ch = sc.next();
 		
 		}while((ch.equalsIgnoreCase("y") || ch.equalsIgnoreCase("yes")) && (cnt < purhcaseLimit));
@@ -131,7 +131,7 @@ public class ShopInfo {
 		}	
 	}
 	
-	public void addProduct(Customer custArr[]) {
+	public boolean addProduct(Customer custArr[]) {
 		
 		System.out.println("Enter Customer Id : ");
 		int id = sc.nextInt();
@@ -191,10 +191,13 @@ public class ShopInfo {
 				ch = sc.next();
 			
 			}while(ch.equalsIgnoreCase("y") || ch.equalsIgnoreCase("yes"));
+			return true;
 		}
 		else {
 			System.out.println("Account Does NOT Exist..");
+			return false;
 		}
+		
 	}
 
 	public Customer searchAccount(Customer custArr[], int custId) {
@@ -252,6 +255,6 @@ public class ShopInfo {
 		System.out.println("\tSgst\t\t\t:\t\t"+bill.getSgst());
 		System.out.println("\tFinal Total\t\t:\t\t"+bill.getFinalTotal());
 	
-}
+	}
 
 }
