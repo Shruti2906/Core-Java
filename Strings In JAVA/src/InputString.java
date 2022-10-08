@@ -6,13 +6,22 @@ public class InputString {
 		
 		Scanner sc = new Scanner(System.in);
 		
+		//There is no method as nextChar(0) in java
+		System.out.println("Enter character : ");
+		char ch = sc.next().charAt(0);
+		System.out.println("ch : "+ch);
+		
 		System.out.println("enter string : ");
 		java.lang.String str = sc.next();
 		System.out.println(str);
 		
-//		System.out.println("enter line : ");
-//		java.lang.String str1 = sc.nextLine();
-//		System.out.println(str1);
+		//issue with nextLine() method 
+		//nextInt() returns 1 and cursor it at end of 1 (1_<-here is the cursor)
+		//which is consumed by nextLine() method
+		sc.nextLine();
+		System.out.println("enter line : ");
+		java.lang.String str1 = sc.nextLine();
+		System.out.println("str1 : "+str1+"end");
 		
 	//Multiline String literal..
 		
