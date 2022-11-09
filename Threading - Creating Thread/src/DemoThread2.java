@@ -13,7 +13,16 @@ public class DemoThread2 implements Runnable{
 	
 	@Override
 	public void run() {
-		System.out.println("demo thread 2.. run called ");
+		for(int i=1; i<=5; i++) {
+			
+			System.out.println(i+" demo thread 2 running..");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+
+				e.printStackTrace();
+			}
+		}
 	}
 
 }

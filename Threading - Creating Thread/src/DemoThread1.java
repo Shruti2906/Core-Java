@@ -5,13 +5,25 @@
 public class DemoThread1 extends Thread{
 
 	public DemoThread1() {
-		System.out.println("Demo Thread 1 Running..");
+		//System.out.println("Demo Thread 1 Running..");
 	}
 	
 	@Override
 	public void run() {
+		
 		super.run();
-		System.out.println("demo thread 1.. run called ");
+		for(int i=1; i<=5; i++) {
+			
+			System.out.println(i+" demo thread 1 running..");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+
+				e.printStackTrace();
+			}
+		}
+			
+		
 	}
 	
 	public void run(int n) {
