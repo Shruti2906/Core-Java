@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<style>
+		body{
+			text-align: center;
+            align-content: center;
+		}
+		
+        h1 {
+            color: green;
+            
+        }
+        .container {
+            padding: 15px;
+            width: 500px;
+            margin: 30%;
+            margin-top: 2%;
+        }
+         
+        label,
+        input {
+            margin-bottom: 10px;
+        }
+         
+        button {
+            float: right;
+            
+            background-color: green;
+        }
+    </style>
+
+</body>
+
+        <h1>Calculator</h1>
+        
+        <div class="container">
+        <form action="CalculationServlet">
+            <div>
+                <label>no1</label>
+                <input type="text" size="40" name="no1">
+            </div>
+            <div>
+                <label>no2</label>
+                <input type="text"
+                       id="number" size="40" name="no2">
+                <span id="error"></span>
+            </div>
+            <button class="" type="submit" name="btn" value="Add" style = "margin-right: 30%;">
+                Add
+            </button>
+            <button class="" type="submit" name="btn" value="Sub">
+                Sub
+            </button>
+            <button class="" type="submit" name="btn" value="Mul">
+                Mul
+            </button>
+            <button class="" type="submit" name="btn" value="Div" style = "margin-left: 30%;">
+                Div
+            </button>
+            </form>
+        </div>
+
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<style>
+        h1 {
+            color: green;
+        }
+        .container {
+            padding: 15px;
+            width: 500px;
+        }
+         
+        label,
+        input {
+            margin-bottom: 10px;
+        }
+         
+        button {
+            float: right;
+            margin-right: 10px;
+            background-color: green;
+        }
+    </style>
+
+</body>
+<center>
+        <h1>Addition</h1>
+        
+        <div class="container">
+        <form action="CalculationController">
+            <div>
+                <label>no1</label>
+                <input type="text" size="40" name="no1">
+            </div>
+            <div>
+                <label>no2</label>
+                <input type="text"
+                       id="number" size="40" name="no2">
+                <span id="error"></span>
+            </div>
+            <button class="" type="submit" name="btn" value="Add">
+                Add
+            </button>
+            <!-- <button class="" type="submit" name="btn" value="Sub">
+                Sub
+            </button> -->
+            </form>
+        </div>
+    </center>
+
+</html>
