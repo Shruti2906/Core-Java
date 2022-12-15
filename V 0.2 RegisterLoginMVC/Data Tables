@@ -1,0 +1,24 @@
+/*
+   create table Register
+   (
+    name varchar2(30),
+    email varchar2(30),
+    username varchar2(20),
+    password varchar2(15)
+    );
+  */
+  
+      <%! Register user = null; %>
+   
+    <%
+	if(!session.isNew()){
+		Object o = session.getAttribute("CurrentUser");
+		user = (Register)o;
+		out.println("Name : "+user.getName());
+		out.println("Name : "+user.getEmail());
+		out.println("Name : "+user.getUname());
+		out.println("Name : "+user.getPassword());
+		
+	}
+	
+	%>
