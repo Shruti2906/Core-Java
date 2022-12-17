@@ -1,5 +1,4 @@
 
-
 class Base1{
 
 	protected int n1;
