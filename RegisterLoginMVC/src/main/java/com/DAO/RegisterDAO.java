@@ -11,7 +11,6 @@ import java.util.Scanner;
 import com.model.Login;
 import com.model.Register;
 
-
 public class RegisterDAO {
 
 	static Connection con = null;
@@ -64,8 +63,6 @@ public class RegisterDAO {
 		}
 		return logStatus;	
 	}
-	
-	
 
 }
 /*
@@ -75,5 +72,5 @@ create table Register
 	email varchar2(20),
 	password varchar2(10)
 );
- 
+ o
 */
