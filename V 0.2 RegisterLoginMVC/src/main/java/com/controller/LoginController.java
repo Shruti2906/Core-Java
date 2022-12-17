@@ -43,17 +43,25 @@ public class LoginController extends HttpServlet {
 		lst.add(log);
 		boolean logStatus = logImpl.validateLogin(lst);
 		lst.add(log);
+		HttpSession session = request.getSession();
+		
+		//System.out.println("logstatus");
+		
 		if(logStatus) {
+			System.out.println("true");
 			List<Register> lstUser = logImpl.getCurrentUser(lst);
-			HttpSession session = request.getSession();
 			session.setAttribute("CurrentUser", lstUser);
+			session.setAttribute("LoginSatus", logStatus);
 			response.sendRedirect("UserDashboard.jsp");
 		}
 		else {
-			response.sendRedirect("ErrorPage.html");
-			//response.sendRedirect("Login.jsp");
+			//response.sendRedirect("ErrorPage.html");
+			System.out.println("false");
+			session.setAttribute("LoginSatus", logStatus);
+			response.sendRedirect("Login.jsp");
 			//same loginpage with error msg
 		}
+		
 	}
 
 	/**

@@ -21,7 +21,7 @@ body {
 #login .container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 600px;
-  height: 370px;
+  height: 380px;
   border: 1px solid #9C9C9C;
   background-color: #EAEAEA;
 }
@@ -58,9 +58,23 @@ body {
                                 <label for="remember-me" class="text-info"><span>New User?</span></label><br>
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
                             </div>
+                            
+                            <div style="color:red">
+                            <%
+                            	if(!session.isNew()){
+                            		
+                            		%>
+                            		<h2>&nbspinvalid credentials.!</h2>
+                            		<%
+                            		session.invalidate();
+                            	}
+        	                    %>
+                            
+                             
                             <div id="register-link" class="text-right">
                                 <a href="Register.html" class="text-info"><h5>Register here</h5></a>
                             </div>
+                            
                         </form>
                     </div>
                 </div>
