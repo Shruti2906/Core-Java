@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
     <%@page import="com.model.Register"%>
+    <%@page import="com.controller.DashboardController"%>
     <%@page import="java.util.List"%>
     <%@page import="java.util.ArrayList"%>
     
@@ -12,7 +13,7 @@
   <meta charset="UTF-8">
   <title>User Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
@@ -21,7 +22,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 <link rel="stylesheet" href="./style.css">
-
+ 
 <style>
 
 * {
@@ -256,6 +257,52 @@ body {
 .right .stock-logo.dandruft:before {
   background: linear-gradient(to top right, #f88781, #f7c682);
 }
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
 
 </style>
 
@@ -288,7 +335,7 @@ body {
     <div class="navigation">
       <ul>
         <li><i class="material-icons">store</i><span><a href="#userDetail">View User Details</a></span></li>
-        <li> <i class="material-icons">track_changes</i><span><a href="#UpdateUserDetail">Update User Details</a></span></li>
+        <li> <i class="material-icons">track_changes</i><span><a href="#UpdateuserDetail">Update User Details</a></span></li>
         <li> <i class="material-icons">loyalty</i><span>Notification</span></li>
         <li> <i class="material-icons">forum</i><span>Message</span></li>
         <li> <i class="material-icons">library_books</i><span>News</span></li>
@@ -314,63 +361,84 @@ body {
     <!-- Update Java Code Here -->
     <!-- Such as user data, update, delete -->
     
-    <div class="row" id="userDetail">
-		<h1 class="title">User Details</h1><br><br><br>
+    <div class="row" id="userDetail" style="font-size: 20px; background-color: ;">
+		<h1 style="font-size: 25px;">User Details<hr></h1><br><br><br>
 		<div>	
 			<%
 			{
 				user = lst.get(0);
 				
-				out.println("<br><br><br><h1>Name  :  "+user.getName()+"</h1>");
-				%>
-				<br>
-				<%
-				out.println("<br><h1>Email  :     "+user.getEmail()+"</h1>");
-				%>
-				<br>
-				<%
-				out.println("<br><h1>UserName  :  "+user.getUname()+"</h1>");
-				%>
-				<br>
-				<%
-				out.println("<br><h1>Password  :  "+user.getPassword()+"</h1>");
+				//out.println("<br><br><br><h1>Name  :  "+user.getName()+"</h1>");
 				
-			}
-			
-			%>
-		</div>
-    </div>
-    
-    <div class="row" id="UpdateUserDetail">
-		<h1 class="title">User Details</h1><br><br><br>
-		<div>	
+				%>
+				<p><br><br><br>Name &nbsp&nbsp&nbsp&nbsp&nbsp : &nbsp&nbsp<%=user.getName() %></p>
+				<br>
+				<%
+				//out.println("<br><h1>Email  :     "+user.getEmail()+"</h1>");
+				%>
+				<p><br>Email &nbsp&nbsp&nbsp&nbsp&nbsp : &nbsp&nbsp<%=user.getEmail() %></p>
+				<br>
+				
+				<%
+				//out.println("<br><h1>UserName  :  "+user.getUname()+"</h1>");
+				%>
+				<p><br>UserName &nbsp&nbsp : &nbsp&nbsp<%=user.getUname() %></p>
+				<br>
+				
+				<%
+				//out.println("<br><h1>Password  :  "+user.getPassword()+"</h1>");
+				%>
+				<p><br>Password &nbsp&nbsp : &nbsp&nbsp<%=user.getPassword() %></p>
+				<br>	
 			<%
-			{
-				user = lst.get(0);
-			%>
-				
-			<p style=""><h1><%=user.getName()%></h1></p>
-				
-				<br>
-				<%
-				out.println("<br><h1>Email  :     "+user.getEmail()+"</h1>");
-				%>
-				<br>
-				<%
-				out.println("<br><h1>UserName  :  "+user.getUname()+"</h1>");
-				%>
-				<br>
-				<%
-				out.println("<br><h1>Password  :  "+user.getPassword()+"</h1>");
 			}
-			
 			%>
 		</div>
     </div>
     
     
+    <div class="row" id="UpdateuserDetail" style="font-size: 20px; background-color: ;">
+	
+		<h1 style="font-size: 25px;">Update User Details<hr></h1><br>
+	</div>
+  	 	<!-- Example single danger button -->
+  	<div class="row">
+  	 	<div class="dropdown">
+		<button class="dropbtn">Select Atrribute to Update</button>
+		  <div class="dropdown-content">
+		    <a href="updateFrom" name="name">Name</a>
+		    <a href="updateFrom" name="email">Email</a>
+		    <a href="updateFrom" name="uname">UserName</a>
+		    <a href="updateFrom" name="pass">Password</a>
+		  </div>
+		</div>
+	</div>
+	
+	<div class="row" id="updateFrom">
+			<form id="login-form" class="form" action="DashboardController" method="post" >
+                <!--   <h3 class="text-center text-info">Fill the update Details</h3><br> -->
+                  <div class="form-group">
+                      <label for="username" class="text-info"><h2>Enter attribute to update</h2></label><br>
+                      <input type="text" name="attr" id="attr" class="form-control">
+                  </div>
+                    <div class="form-group">
+                      <label for="password" class="text-info">Enter New Value</label><br>
+                      <input type="text" name="updateValue" id="password" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <input type="submit" name="submit" class="btn btn-info btn-md" value="Update">
+                  </div>
+                 
+             </form>
+		</div>
+		
+		
+		
+
     
-    
+    <div>
+     
+    </div>
     <!-- <div class="row">
       <div class="graph">
         <svg viewBox="0 0 250 60" width="250" height="90">

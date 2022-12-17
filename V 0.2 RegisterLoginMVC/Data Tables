@@ -22,3 +22,9 @@
 	}
 	
 	%>
+	-------------------------------------------------------------------
+	<table border="20px">
+<tr><th>REGNO</th><th>FNAME</th><th>BAL</th></tr>
+<tr><td><%=user.getName()%></td><td><%= user.getEmail()%></td><td><%= user.getUname()%></td></tr>
+
+</table>

@@ -10,7 +10,9 @@ import com.model.Register;
 public interface LoginServices {
 
 	public boolean validateLogin(List<Login> lst);
-	public List<Register> getCurrentUser(List<Login> lst);
 	//view user data
+	public List<Register> getCurrentUser(List<Login> lst);
+	
 	//update user data
+	public List<Register> updateUser(List<Register> lst, String attr, String updateValue);
 }
