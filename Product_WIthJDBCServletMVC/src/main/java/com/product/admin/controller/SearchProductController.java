@@ -1,7 +1,6 @@
 package com.product.admin.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -16,16 +15,16 @@ import com.product.admin.services.ProductServices;
 import com.product.admin.services.ProductServicesImpl;
 
 /**
- * Servlet implementation class ProductController
+ * Servlet implementation class SearchProductController
  */
-@WebServlet("/ProductController")
-public class ProductController extends HttpServlet {
+@WebServlet("/SearchProductController")
+public class SearchProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProductController() {
+    public SearchProductController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,41 +33,18 @@ public class ProductController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("in searchcom");
 		
-		int productId = Integer.parseInt(request.getParameter("productId"));
-		String productName = request.getParameter("productName");
-		double productPrice = Double.parseDouble(request.getParameter("productPrice"));
-		int ProductQty = Integer.parseInt(request.getParameter("ProductQty"));
-		
-		Product prod = new Product();
-		prod.setProductId(productId);
-		prod.setProductName(productName);
-		prod.setProductPrice(productPrice);
-		prod.setProductQty(ProductQty);
-				
-		List<Product> lst = new ArrayList();
-		lst.add(prod);
+		String prodId = request.getParameter("productId");
+		int productId = Integer.parseInt(prodId);
 		
 		ProductServices prodImpl = new ProductServicesImpl();
-		String str = prodImpl.create(lst);
-		
-		//if(str.equals("ORA-00001: unique constraint (SYSTEM.PRODUCT_PROD_ID_PK) violated")) {
-			//str = "Product Id must be Unique";
-		//}
-		System.out.println("str: "+str);
-		
+		List<Product> lst = prodImpl.retreiveProduct(productId);
 		HttpSession session = request.getSession();
+		session.setAttribute("SearchProdStatus", lst);
 		
-		if(str.equals("valid")) {
-			session.setAttribute("successMsg", str);
-			session.setAttribute("errMsg", null);
-		}
-		else {
-			session.setAttribute("successMsg", null);
-			session.setAttribute("errMsg", str);
-		}
+		response.sendRedirect("SearchProduct.jsp");
 		
-		response.sendRedirect("ProductView.jsp");
 		
 	}
 

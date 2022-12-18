@@ -21,7 +21,7 @@ body {
 #login .container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 600px;
-  height: 500px;
+  height: 520px;
   border: 1px solid #9C9C9C;
   background-color: #EAEAEA;
   margin-top:10%;
@@ -52,22 +52,23 @@ body {
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Product Name:</label><br>
-                                <input type="password" name="productName" id="password" class="form-control" required>
+                                <input type="text" name="productName" id="password" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Product Price:</label><br>
-                                <input type="password" name="productPrice" id="password" class="form-control" required>
+                                <input type="text" name="productPrice" id="password" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Product Qty:</label><br>
-                                <input type="password" name="ProductQty" id="password" class="form-control" required>
+                                <input type="text" name="ProductQty" id="password" class="form-control" required>
                             </div>
-                            <div class="form-group">
-                            
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            <div class="form-group row">
+                                <!-- <div class="form-group"> -->
+                                <input type="submit" name="submit" class="btn btn-info btn-md col" value="submit" style="margin-left: 3%;">
+                                <a href="AdminDashboard.jsp" class="text-info text-right col"><input type="" name="home" class="btn btn-info btn-md" value="Home"></a>
                             </div>
                             
-                            <div style="color:red">
+                           <div class="form-group row">
                             <%
                             	if(!session.isNew()){
                             		
@@ -75,12 +76,12 @@ body {
                             		String errstr = (String)session.getAttribute("errMsg");
                             		if(errstr != null){
                             		%>
-	                            		<h2>Unable to add Product.!<%//=errstr %></h2>
+	                            		<h2 style="color:red">Unable to add Product.!<%//=errstr %></h2>
     	                        	<%
         	                    	}
                             		else if(successstr != null){
                             		%>
-	                            		<h2>Product Added.!<%=//errstr %></h2>
+	                            		<h2 style="color:green">Product Added.!<%//=errstr %></h2>
     	                        	<%
                             		}
                             		session.invalidate();
