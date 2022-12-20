@@ -64,8 +64,8 @@ body {
     </ul>
    
     <form class="form-inline my-2 my-lg-0">
-      <button class="btn btn-outline-success mr-sm-2" type="submit">Home</button>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Profile</button>
+      <button class="btn btn-outline-success mr-sm-2" type=""><a href="WorkInProgress.jsp">Home</a></button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type=""><a href="WorkInProgress.jsp">Profile</a></button>
     </form>
   </div>
 </nav>

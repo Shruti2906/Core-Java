@@ -25,7 +25,7 @@ body {
 #login .container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 600px;
-  height: 300px;
+  height: 340px;
   border: 1px solid #9C9C9C;
   background-color: #EAEAEA;
   margin-top:10%;
@@ -69,7 +69,8 @@ body {
 									if(lst != null){
 										prod = lst.get(0);
 								%>
-										<table border="3px" background="gray">
+										<h5>Product is : </h5>
+										<table class="table">
 											<tr>
 												<td><%=prod.getProductId() %></td>
 												<td><%=prod.getProductName() %></td>
@@ -85,6 +86,7 @@ body {
 									}
 								session.invalidate();
 								}
+								//session.invalidate();
 								%>
                             </div>
                         </form>
