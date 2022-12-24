@@ -1,0 +1,36 @@
+
+table to store registered user/admin details
+
+create table shopRegister
+(
+	first_Name varchar2(20);
+	last_Name varchar2(20);
+	email varchar2(25);
+	gender varchar2(10);
+	userName varchar2(20);
+	password varchar2(15);
+	registerType varchar2(10);
+);
+ 
+ 
+ 
+ User Dashboard Structure
+ -------------------------------------------------------------------------------------------------
+ UserDashboard   											 	
+ 							Welcome to user portal
+ 			
+user servies
+
+view products list
+search product
+view cart
+
+-----------------------------------------------------------------------------------------------------
+user profile
+
+view details
+update
+delete own profile/account
+ 
+ 
+ 
