@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
  <%@ page import="java.util.List" %>
- <%@ page import="com.shop.admin.model.*" %>
+ <%@ page import="com.shop.user.model.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,19 +11,19 @@
 </head>
 <body>
 
-	<%!List<Product> lst = null; %>
+	<%!List<Cart> lst = null; %>
 	<%
 		if(!session.isNew()){
-			lst = (List<Product>)session.getAttribute("cartProdLst");
+			lst = (List<Cart>)session.getAttribute("cartProdLst");
 			if(lst != null){%>
 				<table class="table">
 				  <thead>
 				    <tr>
-				      <th scope="col">Id</th><th scope="col">Name</th><th scope="col">Price</th><th scope="col">Quantity</th>
+				      <th scope="col">Id</th><th scope="col">Name</th><th scope="col">Price</th>
 				    </tr>
 				  </thead>
 				  <tbody>
-				<% for(Product prod:lst){	%>
+				<% for(Cart prod:lst){	%>
 				
 					<tr>
 				    <th scope="row"><%=prod.getProductId() %></th>
@@ -35,6 +35,9 @@
 				<%} %>
 				 </tbody>
 				</table>
+					<form action="BillServlet">
+						<button type="submit">Get Bill</button>
+					</form>
 			<%}
 			else{
 				

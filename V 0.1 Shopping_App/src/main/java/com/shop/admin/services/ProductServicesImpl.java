@@ -123,6 +123,29 @@ public class ProductServicesImpl implements ProductServices{
 		return msg;
 	}
 
+	@Override
+	public boolean decreaseQty(List<Product> plst) {
+		
+		boolean b = false;
+		Product prod = plst.get(plst.size()-1);
+		MyConnection mycon = new MyConnection();
+		Connection con = mycon.getConnection();
+		try {
+			PreparedStatement pstate = con.prepareStatement("update product set PRODUCT_QTY=? where product_id=?");
+			pstate.setInt(1, (prod.getProductQty()-1));
+			pstate.setInt(2, prod.getProductId());
+			int i = pstate.executeUpdate();
+			if(i>0) {
+				b = true;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println("qty decreased");
+		return b;
+	}
+
 }
 /*
  create table product

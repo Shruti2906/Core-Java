@@ -1,4 +1,4 @@
-package com.shop.user.controller;
+package com.shop.admin.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,21 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.shop.admin.model.Product;
-import com.shop.superAdmin.model.Register;
-import com.shop.user.model.Cart;
+import com.shop.admin.services.ProductServices;
+import com.shop.admin.services.ProductServicesImpl;
+import com.shop.user.services.UserServices;
 import com.shop.user.services.UserServicesImpl;
 
 /**
- * Servlet implementation class CartController
+ * Servlet implementation class ProductQtyController
  */
-@WebServlet("/CartController")
-public class CartController extends HttpServlet {
+@WebServlet("/ProductQtyController")
+public class ProductQtyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CartController() {
+    public ProductQtyController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,20 +35,23 @@ public class CartController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("cart controller..");
+
+		System.out.println("Product Qty Controller..");
 		HttpSession session = request.getSession(true);
-		//List<Cart>clst =(List<Cart>) 
+		List<Product> plst = (List<Product>) session.getAttribute("prodLst");
+		
+		ProductServices prodImpl = new ProductServicesImpl();
+		boolean b = prodImpl.decreaseQty(plst);
+		if(b) {
+			System.out.println("back in p qty con");
+			UserServices userImpl = new UserServicesImpl();
+			List<Product> lst = userImpl.displayAllAvailables();
+			
+			session.setAttribute("userProdlst", lst);
+			response.sendRedirect("User_DisplayAllProd.jsp");
+		}
+		
 	
-		List<Register> currentUserlst = (List<Register>) session.getAttribute("CurrentUser");
-		Register currentUser = currentUserlst.get(0);
-		
-		UserServicesImpl userImpl = new UserServicesImpl(); 
-		List<Cart> cartlst= userImpl.getCart(currentUser.getUserName());
-		
-		session.setAttribute("cartProdLst", cartlst);
-		System.out.println("got carts");
-		response.sendRedirect("Cart.jsp");
 		
 	}
 

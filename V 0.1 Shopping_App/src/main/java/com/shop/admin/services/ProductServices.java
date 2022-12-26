@@ -10,4 +10,5 @@ public interface ProductServices {
 	List<Product> retreiveProduct(int productId);
 	List<Product> displayAll();
 	String deleteProduct(int productId);
+	boolean decreaseQty(List<Product> plst);
 }

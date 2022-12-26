@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.shop.datasource.MyConnection;
-import com.shop.model.Register;
+import com.shop.superAdmin.model.Register;
 
 public class RegisterServicesImpl implements RegisterServices{
 

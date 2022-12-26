@@ -117,10 +117,18 @@ h1 span {
 			
 			if(lst != null){
 				if(str != null){
+					if(str.equalsIgnoreCase("true")){
 				%>
 					<h1><span>added to cart.!</span></h1>
 					<!--  <p class="animated bounce slideInLeft infinite"><h1 style="color: green; text-align: center;">Product Added..!!</h1></p>-->
 				<%
+					}
+					else{
+						%>
+						<h1><span style="color:red;">Unable to add at the moment.!</span></h1>
+						<!--  <p class="animated bounce slideInLeft infinite"><h1 style="color: green; text-align: center;">Product Added..!!</h1></p>-->
+					<%
+					}
 				}
 		%>
 				<table class="table">

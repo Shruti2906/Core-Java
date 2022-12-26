@@ -62,11 +62,16 @@ body {
                             <div style="color:red">
                             <%
                             	if(!session.isNew()){
-                            		
-                            		%>
-                            		<h2>&nbspinvalid credentials.!</h2>
-                            		<%
-                            		session.invalidate();
+                            		String LoginSatus = null;
+	                            	 LoginSatus = (String)session.getAttribute("LoginSatus");
+	                            	if(LoginSatus != null){
+	                            		if(LoginSatus.equalsIgnoreCase("false")){
+	                            		%>
+	                            		<h2>&nbspinvalid credentials.!</h2>
+	                            		<%
+	                            			session.invalidate();
+	                            		}
+	                            	}
                             	}
         	                    %>
                              

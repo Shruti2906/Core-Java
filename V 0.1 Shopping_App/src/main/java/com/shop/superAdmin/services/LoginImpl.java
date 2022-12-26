@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.shop.datasource.MyConnection;
-import com.shop.model.Login;
-import com.shop.model.Register;
+import com.shop.superAdmin.model.Login;
+import com.shop.superAdmin.model.Register;
 
 public class LoginImpl implements loginServices{
 
