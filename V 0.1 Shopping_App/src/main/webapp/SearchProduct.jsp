@@ -61,31 +61,43 @@ body {
                             </div>
                             <div>
                             	<%!List<Product> lst = null;
-								Product prod = null;%>
+                            	Product prod = null;
+								%>
 
 								<%
 								if(!session.isNew()){
-								lst = (List<Product>)session.getAttribute("SearchProdStatus");
-									if(lst != null){
-										prod = lst.get(0);
-								%>
-										<h5>Product is : </h5>
-										<table class="table">
-											<tr>
-												<td><%=prod.getProductId() %></td>
-												<td><%=prod.getProductName() %></td>
-												<td><%=prod.getProductPrice() %></td>
-												<td><%=prod.getProductQty() %></td>
-											</tr>
-										</table>
-								<%	}
-									else{
+									String str = null;
+									str = (String)session.getAttribute("SearchProdStatus");
+									if(str != null){
+										if(str.equalsIgnoreCase("true")){
+											lst = (List<Product>)session.getAttribute("SearchProdlst");
+											if(lst != null){
+											
+												prod = lst.get(0);
+												
 									%>
-										<h2 style="color:red">Record does not found.!</h2>
-								<%		
-									}
+												<h5>Product is : </h5>
+												<table class="table">
+													<tr>
+														<td><%=prod.getProductId() %></td>
+														<td><%=prod.getProductName() %></td>
+														<td><%=prod.getProductPrice() %></td>
+														<td><%=prod.getProductQty() %></td>
+													</tr>
+												</table>
+									<%	//session.invalidate();
+											}
+										}
+										else if(str.equalsIgnoreCase("false")){
+									%>
+												<h2 style="color:red">Record does not found.!</h2>
+										<%		
+									    }
+									str = null;
 								session.invalidate();
+									}
 								}
+								
 								//session.invalidate();
 								%>
                             </div>

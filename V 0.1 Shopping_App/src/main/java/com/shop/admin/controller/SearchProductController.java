@@ -41,7 +41,14 @@ public class SearchProductController extends HttpServlet {
 		ProductServices prodImpl = new ProductServicesImpl();
 		List<Product> lst = prodImpl.retreiveProduct(productId);
 		HttpSession session = request.getSession();
-		session.setAttribute("SearchProdStatus", lst);
+		if(lst != null) {
+			session.setAttribute("SearchProdStatus", "true");
+			session.setAttribute("SearchProdlst", lst);
+		}
+		else{
+			session.setAttribute("SearchProdStatus", "false");
+			
+		}
 		
 		response.sendRedirect("SearchProduct.jsp");
 		

@@ -56,7 +56,7 @@ public class LoginController extends HttpServlet {
 			if(reg.getRegisterType().equalsIgnoreCase("user")) {
 				//response.sendRedirect("WorkInProgress.jsp");
 				session.setAttribute("LoginSatus", "true");
-				response.sendRedirect("UserDashboard.jsp");
+				response.sendRedirect("Trial UserDashboard.jsp");
 			}
 			else {
 

@@ -8,6 +8,10 @@
 <title>Display all products</title>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
@@ -19,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   
-  background: linear-gradient(to top right, #7c89d5, #f599a5);
+  /*background: linear-gradient(to top right, #7c89d5, #f599a5);
   /*height: 100vh;*/
 }
 
@@ -82,12 +86,12 @@ h1 span {
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="UserDashboard.jsp">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Trial UserDashboard.jsp">DashBoard <span class="sr-only">(current)</span></a>
       </li>
-     <!--  <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="CartController"><i class="fa fa-shopping-cart"></i>&nbsp View Cart</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li> -->
     </ul>
@@ -134,7 +138,7 @@ h1 span {
 				<table class="table">
 				  <thead>
 				    <tr>
-				      <th scope="col">Id</th><th scope="col">Name</th><th scope="col">Price</th><th scope="col">Quantity</th><th scope="col"><a href="CartController">View Cart</a></th>
+				      <th scope="col">Id</th><th scope="col">Name</th><th scope="col">Price</th><th scope="col">Quantity</th> <th scope="col"><a href="CartController"></a></th>
 				    </tr>
 				  </thead>
 				  <tbody>
@@ -148,7 +152,7 @@ h1 span {
 				    <td><%=prod.getProductQty() %></td>
 				    
 				    <%!int id = 0; %>
-				    <td><button type="submit" name="add" class="btn btn-light btn-md" value="<%=prod.getProductId() %>">Add to Cart</button></td>
+				    <td><button type="submit" name="add" class="btn btn-primary btn-md" value="<%=prod.getProductId() %>">Add to Cart</button></td>
 				    
 				    <!-- <td><h1><span>added to cart</span></h1></td> -->
 				    </tr>

@@ -38,6 +38,12 @@
 	%>
 	<table border="solid" style="font-size: 30px;">
 		<tr>
+			<th>Total</th>
+			<th>CGST</th>
+			<th>SGST</th>
+			<th>FinalTotal</th>
+		</tr>
+		<tr>
 			<td><%=bobj.getTotal() %></td>
 			<td><%=bobj.getCgst() %></td>
 			<td><%=bobj.getSgst() %></td>
